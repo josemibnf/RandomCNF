@@ -5,7 +5,7 @@ import grpc
 import api_pb2 as api__pb2
 
 
-class ServiceStub(object):
+class RandomStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -15,23 +15,24 @@ class ServiceStub(object):
             channel: A grpc.Channel.
         """
         self.RandomCnf = channel.unary_unary(
-                '/Service/RandomCnf',
+                '/Random/RandomCnf',
                 request_serializer=api__pb2.WhoAreYourParams.SerializeToString,
                 response_deserializer=api__pb2.Cnf.FromString,
                 )
 
 
-class ServiceServicer(object):
+class RandomServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def RandomCnf(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """port 8000
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
 
-def add_ServiceServicer_to_server(servicer, server):
+def add_RandomServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'RandomCnf': grpc.unary_unary_rpc_method_handler(
                     servicer.RandomCnf,
@@ -40,12 +41,12 @@ def add_ServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'Service', rpc_method_handlers)
+            'Random', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class Service(object):
+class Random(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
@@ -59,7 +60,7 @@ class Service(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/Service/RandomCnf',
+        return grpc.experimental.unary_unary(request, target, '/Random/RandomCnf',
             api__pb2.WhoAreYourParams.SerializeToString,
             api__pb2.Cnf.FromString,
             options, channel_credentials,

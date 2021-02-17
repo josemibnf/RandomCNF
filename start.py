@@ -7,7 +7,7 @@ if __name__ == "__main__":
    from api_pb2 import Cnf
    import api_pb2_grpc
 
-   class RandomCnf(api_pb2_grpc.ServiceServicer):
+   class RandomCnf(api_pb2_grpc.RandomServicer):
       def RandomCnf(self, request, context):
          return randomCNF.ok()
 
@@ -15,7 +15,7 @@ if __name__ == "__main__":
      
    # create a gRPC server
    server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
-   api_pb2_grpc.add_ServiceServicer_to_server(
+   api_pb2_grpc.add_RandomServicer_to_server(
        RandomCnf(), server=server
    )
 

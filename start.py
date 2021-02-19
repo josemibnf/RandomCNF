@@ -22,11 +22,4 @@ if __name__ == "__main__":
    print('Listening on port 8000.')
    server.add_insecure_port('[::]:8000')
    server.start()
-
-   # since server.start() will not block,
-   # a sleep-loop is added to keep alive
-   try:
-       while True:
-           time.sleep(86400)
-   except KeyboardInterrupt:
-       server.stop(0)
+   server.wait_for_termination()

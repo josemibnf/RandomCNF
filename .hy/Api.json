@@ -1,1 +1,1 @@
-{"Port": "8080", "Service": "Solver", "Proto": "TCP"}
+{"Port": "8000", "Service": "Solver", "Proto": "TCP"}

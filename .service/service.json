@@ -1,0 +1,5 @@
+{
+    "api": [{"port":8000, "protocol":["http2","grpc"]}],
+    "architecture": "armv8",
+    "entrypoint": "python3 /random/start.py",
+}

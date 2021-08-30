@@ -15,7 +15,7 @@ class RandomStub(object):
             channel: A grpc.Channel.
         """
         self.RandomCnf = channel.unary_unary(
-                '/Random/RandomCnf',
+                '/api.Random/RandomCnf',
                 request_serializer=api__pb2.WhoAreYourParams.SerializeToString,
                 response_deserializer=api__pb2.Cnf.FromString,
                 )
@@ -41,7 +41,7 @@ def add_RandomServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'Random', rpc_method_handlers)
+            'api.Random', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -60,7 +60,7 @@ class Random(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/Random/RandomCnf',
+        return grpc.experimental.unary_unary(request, target, '/api.Random/RandomCnf',
             api__pb2.WhoAreYourParams.SerializeToString,
             api__pb2.Cnf.FromString,
             options, channel_credentials,

@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+package api;
+
 message Clause {
     repeated int32 literal = 1;
 }

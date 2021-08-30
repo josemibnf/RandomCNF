@@ -15,11 +15,11 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='api.proto',
-  package='',
+  package='api',
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\tapi.proto\"\x19\n\x06\x43lause\x12\x0f\n\x07literal\x18\x01 \x03(\x05\"\x1e\n\x03\x43nf\x12\x17\n\x06\x63lause\x18\x01 \x03(\x0b\x32\x07.Clause\"\x12\n\x10WhoAreYourParams20\n\x06Random\x12&\n\tRandomCnf\x12\x11.WhoAreYourParams\x1a\x04.Cnf\"\x00\x62\x06proto3'
+  serialized_pb=b'\n\tapi.proto\x12\x03\x61pi\"\x19\n\x06\x43lause\x12\x0f\n\x07literal\x18\x01 \x03(\x05\"\"\n\x03\x43nf\x12\x1b\n\x06\x63lause\x18\x01 \x03(\x0b\x32\x0b.api.Clause\"\x12\n\x10WhoAreYourParams28\n\x06Random\x12.\n\tRandomCnf\x12\x15.api.WhoAreYourParams\x1a\x08.api.Cnf\"\x00\x62\x06proto3'
 )
 
 
@@ -27,14 +27,14 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _CLAUSE = _descriptor.Descriptor(
   name='Clause',
-  full_name='Clause',
+  full_name='api.Clause',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='literal', full_name='Clause.literal', index=0,
+      name='literal', full_name='api.Clause.literal', index=0,
       number=1, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -52,21 +52,21 @@ _CLAUSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13,
-  serialized_end=38,
+  serialized_start=18,
+  serialized_end=43,
 )
 
 
 _CNF = _descriptor.Descriptor(
   name='Cnf',
-  full_name='Cnf',
+  full_name='api.Cnf',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='clause', full_name='Cnf.clause', index=0,
+      name='clause', full_name='api.Cnf.clause', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -84,14 +84,14 @@ _CNF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=40,
-  serialized_end=70,
+  serialized_start=45,
+  serialized_end=79,
 )
 
 
 _WHOAREYOURPARAMS = _descriptor.Descriptor(
   name='WhoAreYourParams',
-  full_name='WhoAreYourParams',
+  full_name='api.WhoAreYourParams',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -109,8 +109,8 @@ _WHOAREYOURPARAMS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=72,
-  serialized_end=90,
+  serialized_start=81,
+  serialized_end=99,
 )
 
 _CNF.fields_by_name['clause'].message_type = _CLAUSE
@@ -122,21 +122,21 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 Clause = _reflection.GeneratedProtocolMessageType('Clause', (_message.Message,), {
   'DESCRIPTOR' : _CLAUSE,
   '__module__' : 'api_pb2'
-  # @@protoc_insertion_point(class_scope:Clause)
+  # @@protoc_insertion_point(class_scope:api.Clause)
   })
 _sym_db.RegisterMessage(Clause)
 
 Cnf = _reflection.GeneratedProtocolMessageType('Cnf', (_message.Message,), {
   'DESCRIPTOR' : _CNF,
   '__module__' : 'api_pb2'
-  # @@protoc_insertion_point(class_scope:Cnf)
+  # @@protoc_insertion_point(class_scope:api.Cnf)
   })
 _sym_db.RegisterMessage(Cnf)
 
 WhoAreYourParams = _reflection.GeneratedProtocolMessageType('WhoAreYourParams', (_message.Message,), {
   'DESCRIPTOR' : _WHOAREYOURPARAMS,
   '__module__' : 'api_pb2'
-  # @@protoc_insertion_point(class_scope:WhoAreYourParams)
+  # @@protoc_insertion_point(class_scope:api.WhoAreYourParams)
   })
 _sym_db.RegisterMessage(WhoAreYourParams)
 
@@ -144,17 +144,17 @@ _sym_db.RegisterMessage(WhoAreYourParams)
 
 _RANDOM = _descriptor.ServiceDescriptor(
   name='Random',
-  full_name='Random',
+  full_name='api.Random',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=92,
-  serialized_end=140,
+  serialized_start=101,
+  serialized_end=157,
   methods=[
   _descriptor.MethodDescriptor(
     name='RandomCnf',
-    full_name='Random.RandomCnf',
+    full_name='api.Random.RandomCnf',
     index=0,
     containing_service=None,
     input_type=_WHOAREYOURPARAMS,
